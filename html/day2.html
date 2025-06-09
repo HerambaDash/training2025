@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Learn about HTML links, navigation, and form elements in this comprehensive guide."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2: Links and Navigation & Form Elements</title>
+  </head>
+  <body>
+    <h1>Welcome to Day 2: HTML Links and Navigation</h1>
+    <a href="https://squbix.com" target="_blank">Visit Example</a><br />
+    <a href="mailto:someone@example.com">Send Email</a><br />
+    <a href="files/report.pdf" download>Download Report 1</a><br /><br />
+    <a href="/report2.pdf" download>Download Report 2</a><br />
+    <a href="#selectSection">Go to Section 1</a><br />
+    <a href="day1.html" target="_blank">Go to Page 2 (same tab)</a><br />
+    <a href="main.html" target="_parent">Open in parent frame</a><br />
+    <!-- href="report.pdf"
+    href="../report.pdf"
+    href="/files/report.pdf"
+    href="files/report.pdf" -->
+    <ul>
+      <li><a href="files/report1.pdf">Home</a></li>
+      <br />
+      <li><a href="/about">About</a></li>
+      <br />
+      <li><a href="/contact">Contact</a></li>
+      <br />
+    </ul>
+    <input
+      type="email"
+      name="userEmail"
+      id="email"
+      placeholder="Enter your email"
+      required
+      maxlength="50"
+      autocomplete="on"
+      autofocus
+    /><br /><br />
+    <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder="Enter your username"
+      value="heramba"
+      maxlength="20"
+      minlength="5"
+      required
+      autocomplete="on"
+      autofocus
+      spellcheck="true"
+      pattern="[a-zA-Z0-9]+"
+    /><br /><br />
+    <input
+      type="password"
+      name="userpass"
+      id="password"
+      placeholder="Enter password"
+      minlength="6"
+      maxlength="20"
+      required
+      autocomplete="off"
+      inputmode="text"
+    /><br /><br />
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Enter your email"
+      required
+      pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+      autocomplete="email"
+    /><br /><br />
+    <input
+      type="number"
+      name="age"
+      id="age"
+      min="18"
+      max="99"
+      step="1"
+      value="25"
+      required
+    /><br /><br />
+    <input
+      type="date"
+      name="dob"
+      id="dob"
+      min="1970-01-01"
+      max="2025-12-31"
+      required
+    /><br /><br />
+    <input
+      type="range"
+      name="volume"
+      id="volume"
+      min="0"
+      max="100"
+      step="10"
+      value="50"
+    /><br /><br />
+    <input
+      type="file"
+      name="resume"
+      id="resume"
+      accept=".pdf,"
+      multiple
+      required
+    /><br /><br />
+    <input
+      type="checkbox"
+      name="agree"
+      id="agree"
+      value="yes"
+      checked
+      required
+    />
+    I agree to terms<br /><br />
+    <input type="radio" name="gender" id="male" value="male" /> Male
+    <br />
+    <input type="radio" name="gender" id="female" value="female" />
+    Female<br /><br />
+    <input type="hidden" name="formId" value="signupForm123" /><br /><br />
+    <input
+      type="color"
+      name="favColor"
+      id="favColor"
+      value="rgb(100%, 0%, 0%)"
+    /><br /><br />
+    <br />
+    <textarea
+      name="feedback"
+      id="feedback"
+      rows="6"
+      cols="50"
+      placeholder="Write your feedback here..."
+      maxlength="300"
+      minlength="20"
+      required
+      autofocus
+      wrap="soft"
+      spellcheck="true"
+    ></textarea>
+    <br /><br />
+    <textarea readonly>This field is read-only.</textarea>
+    <br /><br />
+    <textarea disabled>This field is disabled.</textarea>
+    <br /><br />
+    <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder="Enter your username"
+      value="heramba"
+      maxlength="20"
+      minlength="5"
+      required
+      autocomplete="on"
+      autofocus
+      spellcheck="true"
+      pattern="[a-zA-Z0-9]+"
+      disabled
+    /><br /><br />
+    <form id="reviewForm"></form>
+    <textarea
+      name="review"
+      form="reviewForm"
+      placeholder="Write your review..."
+    ></textarea>
+    <br /><br />
+    <textarea name="notes" wrap="hard"></textarea>
+    <br /><br />
+    <textarea name="notes" wrap="soft"></textarea>
+    <br /><br />
+    <div id="selectSection">
+      <select
+        name="department"
+        id="dept"
+        required
+        autofocus
+        form="employeeForm"
+      >
+        <option value="hr" selected>HR</option>
+        <option value="it">IT</option>
+        <option value="finance">Finance</option>
+        <option value="sales" disabled>Sales (Closed)</option>
+      </select>
+      <br /><br />
+      <select name="skills" multiple size="3">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+        <option value="react">React</option>
+        <option value="node">Node.js</option>
+      </select>
+      <br /><br />
+      <select name="region" disabled>
+        <option value="north">North</option>
+        <option value="south">South</option>
+      </select>
+      <br /><br />
+      <form id="courseForm"></form>
+
+      <select name="course" form="courseForm">
+        <option value="web">Web Development</option>
+        <option value="uiux">UI/UX Design</option>
+      </select>
+      <br /><br />
+
+      <select name="plan">
+        <option value="basic" label="Basic Plan"></option>
+        <option value="pro" label="Pro Plan"></option>
+      </select>
+      <br /><br />
+      <select name="language">
+        <optgroup label="Frontend">
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
+        </optgroup>
+        <optgroup label="Backend">
+          <option value="node">Node.js</option>
+          <option value="python">Python</option>
+        </optgroup>
+      </select>
+      <br /><br />
+    </div>
+  </body>
+</html>
