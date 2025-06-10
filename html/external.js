@@ -21,9 +21,16 @@ function validateForm(event) {
   if (user.length < 3) {
     document.getElementById("directerror").innerText =
       "Username must be at least 3 characters.";
-    return false;
+    // return false;
   }
-  return true;
+  const age = document.getElementById("directage").value;
+  if (age < 18 || age > 120) {
+    document.getElementById("directageerror").innerText =
+      "You must be at least 18 years old and less than 120 years old.";
+    // return false;
+  }
+  // return true;
+  // call the api
 }
 
 function handleForm(event) {
