@@ -1,0 +1,191 @@
+/* External CSS */
+.external-style {
+  color: green;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+/* h3 {
+    color: blue;
+    font-size: 24px;
+    font-weight: bold;
+} */
+
+h1 {
+  color: green;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* h3 and h1 are selctors */
+/* color: blue is a declaration */
+
+.default {
+  color: blue;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.normalH3 {
+  color: red;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#idCss {
+  color: purple;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* .default {
+    color: blue;
+    font-size: 24px;
+    font-weight: bold;
+} */
+
+/* Inline > Internal > External */
+/* id > class */
+/* class > element selector */
+
+/* the one which appears later will be applied id specificity is same*/
+
+.textProperties {
+  font-family: Arial, sans-serif;
+  /* font-family: 'Times New Roman', serif;  Elegant, formal text */
+  /* font-family: 'Courier New', monospace;  Code or technical text */
+
+  /* font-size: 16px; */
+  /* font-size: 1.5em;  Relative to parent element */
+  /* font-size: 1.5rem;  Relative to parent element */
+  /* font-size: 100%;  Relative to parent element */
+
+  font-weight: bold;
+  /* font-weight: 400;  Normal */
+
+  font-style: italic;
+  /* font-style: normal; */
+  /* font-style: oblique;  Similar to italic, slanted */
+
+  font-variant: small-caps;
+  /* font-variant: normal; */
+
+  color: blue;
+  /* color: #333333;  Standard dark gray for readability */
+
+  text-align: justify; /* text-align: center; */
+  /* text-align: right; */
+  /* text-align: left; */
+
+  text-transform: capitalize;
+  /* text-transform: uppercase; */
+  /* text-transform: lowercase; */
+
+  line-height: 1.5;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  text-decoration: underline wavy red;
+  /* text-decoration: line-through; */
+  /* text-decoration: overline double green; */
+
+  text-indent: 20px;
+  /* text-shadow: none; */
+
+  text-shadow: 2px 2px 5px gray;
+  white-space: normal;
+  /* white-space: nowrap; */
+  /* white-space: pre-wrap; */
+
+  overflow-wrap: break-word;
+  /* overflow-wrap: normal; */
+
+  vertical-align: middle;
+  /* vertical-align: top; */
+  /* vertical-align: baseline; */
+
+  width: 300px;
+}
+
+#backgroundDiv {
+    background-color: red;
+    background-image: url('CN.png');
+    background-repeat: no-repeat;
+    /* repeat, repeat-x reapeat-y space round */
+    background-size: auto;
+    /* background-size: cover; */
+    /* background-size: contain; */
+    /* background-size: 100px 100px */
+    background-position: center;
+    /* left top, left center, left bottom, center top, center center, center bottom, right top, right center, right bottom, top left, top center, top right, bottom left, bottom center, bottom right, center, 0% 0%, 50% 50%, 100% 100%, 0px 0px, 10px 20px, 1em 2em*/
+    padding: 20px;
+    border: 2px solid darkblue;
+    width: 400px;
+    height: 300px;
+}
+
+.custom-box {
+  height: 300px;
+  width: 300px;
+
+  /* Border Width */
+  border-width: 2px; /* 1px, 4px, thin, thick */
+
+  /* Border Style */
+  border-style: solid; /* dotted, dashed, double, groove, ridge, inset, outset, none, hidden */
+
+  /* Border Color */
+  border-color: red; /* blue, green, #333, rgb(255, 0, 0) */
+
+  /* Individual Borders */
+  /* You can also set individually like below: */
+  /* border-top: 2px dashed blue; */
+  /* border-right: 3px dotted green; */
+  /* border-bottom: 4px double orange; */
+  /* border-left: 1px solid black; */
+
+  /* Border Radius */
+  border-radius: 8px; /* 0, 50%, 10px 5px */
+
+  /* Border Image (optional advanced property) */
+  /* border-image: url(border.png) 30 round; */
+}
+
+.mp-box {
+  height: 300px;
+  width: 300px;
+  background-color: lightblue;
+
+  /* MARGIN - Spacing outside the box */
+
+  margin: 10px; /* shorthand for all sides */
+  /* margin: 10px 20px; */       /* top/bottom 10px, left/right 20px */
+  /* margin: 10px 15px 5px 20px; */ /* top, right, bottom, left */
+
+  /* Individual Margins */
+  /* margin-top: 5px; */
+  /* margin-right: 10px; */
+  /* margin-bottom: 15px; */
+  /* margin-left: 20px; */
+
+  /* Auto margin (centering) */
+  /* margin: 0 auto; */ /* horizontally center the div */
+
+  /* Negative margin */
+  /* margin: -5px; */
+
+  /* PADDING - Spacing inside the box */
+
+  padding: 8px; /* shorthand for all sides */
+  /* padding: 10px 15px; */       /* top/bottom 10px, left/right 15px */
+  /* padding: 5px 10px 15px 20px; */ /* top, right, bottom, left */
+
+  /* Individual Padding */
+  /* padding-top: 5px; */
+  /* padding-right: 10px; */
+  /* padding-bottom: 15px; */
+  /* padding-left: 20px; */
+}
+
+
+
+
