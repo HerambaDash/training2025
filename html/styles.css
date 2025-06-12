@@ -55,7 +55,7 @@ h1 {
   /* font-family: 'Times New Roman', serif;  Elegant, formal text */
   /* font-family: 'Courier New', monospace;  Code or technical text */
 
-  /* font-size: 16px; */
+  font-size: 24px;
   /* font-size: 1.5em;  Relative to parent element */
   /* font-size: 1.5rem;  Relative to parent element */
   /* font-size: 100%;  Relative to parent element */
@@ -63,12 +63,12 @@ h1 {
   font-weight: bold;
   /* font-weight: 400;  Normal */
 
-  font-style: italic;
-  /* font-style: normal; */
+  /* font-style: italic; */
+  font-style: normal;
   /* font-style: oblique;  Similar to italic, slanted */
 
-  font-variant: small-caps;
-  /* font-variant: normal; */
+  /* font-variant: small-caps; */
+  font-variant: normal;
 
   color: blue;
   /* color: #333333;  Standard dark gray for readability */
@@ -84,7 +84,7 @@ h1 {
   line-height: 1.5;
   letter-spacing: 2px;
   word-spacing: 4px;
-  text-decoration: underline wavy red;
+  /* text-decoration: underline wavy red; */
   /* text-decoration: line-through; */
   /* text-decoration: overline double green; */
 
@@ -92,7 +92,7 @@ h1 {
   /* text-shadow: none; */
 
   text-shadow: 2px 2px 5px gray;
-  white-space: normal;
+  /* white-space: normal; */
   /* white-space: nowrap; */
   /* white-space: pre-wrap; */
 
@@ -103,21 +103,21 @@ h1 {
   /* vertical-align: top; */
   /* vertical-align: baseline; */
 
-  width: 300px;
+  /* width: 300px; */
 }
 
 #backgroundDiv {
-    background-color: red;
+    /* background-color: red; */
     background-image: url('CN.png');
     background-repeat: no-repeat;
     /* repeat, repeat-x reapeat-y space round */
-    background-size: auto;
+    /* background-size: auto; */
     /* background-size: cover; */
     /* background-size: contain; */
-    /* background-size: 100px 100px */
-    background-position: center;
+    background-size: 100px 100px;
+    background-position: left top;
     /* left top, left center, left bottom, center top, center center, center bottom, right top, right center, right bottom, top left, top center, top right, bottom left, bottom center, bottom right, center, 0% 0%, 50% 50%, 100% 100%, 0px 0px, 10px 20px, 1em 2em*/
-    padding: 20px;
+    /* padding: 20px; */
     border: 2px solid darkblue;
     width: 400px;
     height: 300px;
@@ -128,23 +128,28 @@ h1 {
   width: 300px;
 
   /* Border Width */
-  border-width: 2px; /* 1px, 4px, thin, thick */
+  border-width: 2px 2px 8px;
 
   /* Border Style */
-  border-style: solid; /* dotted, dashed, double, groove, ridge, inset, outset, none, hidden */
+  border-style: solid;
+  /* dotted, dashed, double, groove, ridge, inset, outset, none, hidden */
 
   /* Border Color */
-  border-color: red; /* blue, green, #333, rgb(255, 0, 0) */
+  border-color: red; 
+
+  /* blue, green, #333, rgb(255, 0, 0) */
+
+  /* border: 1px solid black; shorthand for all sides */
 
   /* Individual Borders */
   /* You can also set individually like below: */
   /* border-top: 2px dashed blue; */
   /* border-right: 3px dotted green; */
-  /* border-bottom: 4px double orange; */
+  border-bottom: 4px double orange;
   /* border-left: 1px solid black; */
 
   /* Border Radius */
-  border-radius: 8px; /* 0, 50%, 10px 5px */
+  /* border-radius: 8px; 0, 50%, 10px 5px */
 
   /* Border Image (optional advanced property) */
   /* border-image: url(border.png) 30 round; */
@@ -157,7 +162,7 @@ h1 {
 
   /* MARGIN - Spacing outside the box */
 
-  margin: 10px; /* shorthand for all sides */
+  /* margin: 10px; */
   /* margin: 10px 20px; */       /* top/bottom 10px, left/right 20px */
   /* margin: 10px 15px 5px 20px; */ /* top, right, bottom, left */
 
@@ -168,7 +173,7 @@ h1 {
   /* margin-left: 20px; */
 
   /* Auto margin (centering) */
-  /* margin: 0 auto; */ /* horizontally center the div */
+  margin: 0 auto; /* horizontally center the div */
 
   /* Negative margin */
   /* margin: -5px; */
@@ -185,6 +190,220 @@ h1 {
   /* padding-bottom: 15px; */
   /* padding-left: 20px; */
 }
+
+.innerText {
+  /* margin: auto; */
+  text-align: center;
+  vertical-align: middle;
+  /* margin-top: auto;
+  margin-bottom: auto; */
+  color: #ff0000;
+  /* line-height: 300px; */
+}
+
+/* Box model and dimensions */
+.box {
+  width: 200px;
+  height: 200px;
+  /* max-width: 100%; */
+  /* max-height: 200px; */
+  padding: 20px;
+  /* padding: 10px 15px 20px 25px; */
+  border: 2px solid #333;
+  /* border-style: dashed; */
+  /* border-width: 4px; */
+  /* border-color: red; */
+  margin: 10px;
+  /* margin: auto; */
+  box-sizing: border-box;
+  /* border and padding are included in height and width */
+  /* box-sizing: content-box; */
+  /* border and padding are not included in height and width */
+  background-color: lightblue;
+  text-align: center;
+  display: inline;
+}
+
+/* Display types */
+.box-container {
+  /* display: flex; */
+  /* display: block; */
+  display: inline;
+  /* display: inline-block; */
+  /* display: grid; */
+  /* gap: 10px;
+  justify-content: center; */
+}
+
+/* Text styling */
+.text-sample {
+  font-weight: bold;
+  /* font-weight: normal; */
+  font-style: italic;
+  /* font-style: normal; */
+  text-decoration: underline;
+  /* text-decoration: none; */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  color: #444;
+  /* color: rgb(255, 0, 0); */
+  /* color: hsl(240, 100%, 50%); */
+  /* color: #ff5733; */
+}
+
+/* Pseudo-classes */
+.text-sample:hover {
+  color: blue;
+  text-decoration: line-through;
+}
+
+.text-sample:active {
+  color: red;
+}
+
+.text-input:focus {
+  border-color: green;
+  outline: none;
+}
+
+/* Class selector */
+.box {
+  border-radius: 8px;
+}
+
+/* ID selector */
+#main-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  /* color: #ff0000; */
+}
+
+/* Tag selector */
+input {
+  padding: 10px;
+  margin-top: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column; */
+  /* flex-direction: column-reverse; */
+
+  justify-content: space-between;
+  /* justify-content: flex-start; */
+  /* justify-content: flex-end; */
+  /* justify-content: center; */
+  /* justify-content: space-around; */
+  /* justify-content: space-evenly; */
+
+  align-items: center;
+  /* align-items: flex-start; */
+  /* align-items: flex-end; */
+  /* align-items: stretch; */
+  /* align-items: baseline; */
+
+  align-content: stretch;
+  /* align-content: center; */
+  /* align-content: flex-start; */
+  /* align-content: flex-end; */
+  /* align-content: space-between; */
+  /* align-content: space-around; */
+
+  flex-wrap: wrap;
+  /* flex-wrap: nowrap; */
+  /* flex-wrap: wrap-reverse; */
+
+  gap: 10px;
+  border: 2px solid #333;
+  padding: 10px;
+  height: 200px;
+}
+
+.flex-item {
+  background-color: lightcoral;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+
+  /* flex-grow: 1; */
+  /* flex-shrink: 0; */
+  /* flex-basis: 150px; */
+  /* order: 2; */
+  /* align-self: flex-end; */
+}
+
+.grid-container {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: 100px 200px auto; */
+  /* grid-template-columns: 1fr 2fr; */
+
+  grid-template-rows: 100px 200px;
+  /* grid-template-rows: 100px 150px; */
+
+  /* grid-template-areas:
+    "header header header"
+    "main main sidebar"
+    "footer footer footer"; */
+
+  gap: 10px;
+  /* row-gap: 15px; */
+  /* column-gap: 20px; */
+
+  justify-items: stretch;
+  /* justify-items: start; */
+  /* justify-items: end; */
+  /* justify-items: center; */
+
+  align-items: stretch;
+  /* align-items: start; */
+  /* align-items: end; */
+  /* align-items: center; */
+
+  justify-content: center;
+  /* justify-content: start; */
+  /* justify-content: end; */
+  /* justify-content: space-around; */
+  /* justify-content: space-between; */
+  /* justify-content: space-evenly; */
+
+  align-content: center;
+  /* align-content: start; */
+  /* align-content: end; */
+  /* align-content: space-around; */
+  /* align-content: space-between; */
+  /* align-content: space-evenly; */
+
+  border: 2px solid #333;
+  padding: 10px;
+  height: 300px;
+}
+
+.grid-item {
+  background-color: teal;
+  color: white;
+  font-size: 18px;
+  padding: 20px;
+  text-align: center;
+
+  /* grid-column: span 2; */
+  /* grid-row: span 2; */
+  /* justify-self: end; */
+  /* align-self: start; */
+}
+
+.gridItem1 {
+  grid-row: span 2;
+}
+
 
 
 
