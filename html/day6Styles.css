@@ -12,12 +12,21 @@
 body {
   font-family: "Tangerine", sans-serif;
   font-weight: 300;
+  position: relative;
+  margin: 0;
+}
+
+.parentDiv {
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: scroll;
 }
 
 /* =====================
        POSITIONING
     ====================== */
-.position-box {
+.position-box2 {
   /* position: relative; */
   /* position: absolute; */
   /* position: fixed; */
@@ -27,8 +36,24 @@ body {
   background-color: var(--main-color);
   color: white;
   padding: var(--padding);
-  padding-left: calc(2rem + 5%);
-  z-index: 10;
+  /* padding-left: calc(2rem + 5%); */
+  z-index: 50;
+  opacity: 0.5;
+}
+
+.position-box1 {
+  /* position: relative; */
+  /* position: absolute; */
+  position: fixed;
+  /* position: sticky; */
+  /* top: 0; */
+  /* left: 10px; */
+  background-color: blue;
+  color: white;
+  padding: var(--padding);
+  /* padding-left: calc(2rem + 5%); */
+  z-index: 75;
+  width: 100vw;
 }
 /* =====================
        RESPONSIVE UNITS
@@ -55,12 +80,12 @@ img.fluid-image {
     ====================== */
 @keyframes slide {
   from {
-    /* transform: translateX(0); */
-    transform: translate(0, 0);
+    transform: translateX(0);
+    /* transform: translate(0, 0); */
   }
   to {
-    /* transform: translateX(300px); */
-    transform: translate(300px, -300px);
+    transform: translateX(200px);
+    /* transform: translate(300px, -300px); */
   }
 }
 
@@ -71,17 +96,17 @@ img.fluid-image {
   animation-name: slide;
   animation-duration: 2s;
   /* animation-timing-function: ease-in-out; */
-  /* animation-timing-function: ease; */ /* default, slow-fast-slow */
-  /* animation-timing-function: linear; */ /* constant speed */
+  /* animation-timing-function: ease; default, slow-fast-slow */
+  /* animation-timing-function: linear; constant speed */
   /* animation-timing-function: ease-in; */ /* starts slow, speeds up */
   /* animation-timing-function: ease-out; */ /* starts fast, slows down */
   /* animation-timing-function: ease-in-out; */ /* starts and ends slow */
-  /* animation-timing-function: step-start; */ /* jumps to end immediately */
+  /* animation-timing-function: step-start;  */
   /* animation-timing-function: step-end; */ /* jumps to end at last moment */
-  /* animation-timing-function: steps(5); */ /* jumps in 5 equal steps */
-  animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1); /* custom curve */
-  /* animation-delay: 1s; */
-  animation-iteration-count: 0;
+  animation-timing-function: steps(5); /* jumps in 5 equal steps */
+  /* animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1); */
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
   /* animation-iteration-count: 1; */
   /* 1, 2, 3, ..., 1.5, 2.5, ... */
 }
@@ -144,3 +169,40 @@ img.fluid-image {
       - Minimized class nesting
       - Shorthand properties
     */
+
+    .flex-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .flex-item {
+    flex: 1 0 22%;
+    padding: 10px;
+    background-color: #2af207;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+@media (max-width: 576px) {
+  .mobile {
+    flex: 1 0 100%;
+  }
+}
+
+
+@media (min-width: 577px) and (max-width: 980px) {
+  .tablet {
+    flex: 1 0 45%;
+  }
+}
+
+@media (min-width: 981px) {
+  .desktop {
+    flex: 1 0 22%;
+  }
+}
