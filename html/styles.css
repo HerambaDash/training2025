@@ -318,7 +318,7 @@ input {
   /* flex-wrap: nowrap; */
   /* flex-wrap: wrap-reverse; */
 
-  /* gap: 10px; */
+  gap: 10px;
   border: 2px solid #333;
   /* padding: 10px; */
   height: 200px;
@@ -339,20 +339,20 @@ input {
 }
 
 .size1 {
-  font-size: 24px;
-  order: -1;
-  align-self: stretch;
+  /* font-size: 24px; */
+  /* order: -1; */
+  /* align-self: stretch; */
 }
 
 .size2 {
-  font-size: 30px;
-  order: -1;
-  flex-grow: 1;
+  /* font-size: 30px; */
+  /* order: -1; */
+  /* flex-grow: 1; */
 }
 
 .size3 {
-  font-size: 36px;
-  order: 3;
+  /* font-size: 36px; */
+  /* order: 3; */
 }
 
 .grid-container {

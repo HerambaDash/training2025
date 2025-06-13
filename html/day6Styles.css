@@ -1,0 +1,146 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap'); */
+
+/* =====================
+       CSS VARIABLES
+    ====================== */
+:root {
+  --main-color: #4caf50;
+  --text-size: 1rem;
+  --padding: 1em;
+}
+
+body {
+  font-family: "Tangerine", sans-serif;
+  font-weight: 300;
+}
+
+/* =====================
+       POSITIONING
+    ====================== */
+.position-box {
+  /* position: relative; */
+  /* position: absolute; */
+  /* position: fixed; */
+  position: sticky;
+  top: 0;
+  /* left: 10px; */
+  background-color: var(--main-color);
+  color: white;
+  padding: var(--padding);
+  padding-left: calc(2rem + 5%);
+  z-index: 10;
+}
+/* =====================
+       RESPONSIVE UNITS
+    ====================== */
+.responsive-box {
+  font-size: 1em;
+  /* font-size: 1rem; */
+  /* font-size: 5vw; */
+  /* font-size: 10vh; */
+  width: 50%;
+  max-width: 300px;
+  padding: 1em;
+  background-color: #ddd;
+  margin: 1rem 0;
+}
+
+img.fluid-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================
+       ANIMATION
+    ====================== */
+@keyframes slide {
+  from {
+    /* transform: translateX(0); */
+    transform: translate(0, 0);
+  }
+  to {
+    /* transform: translateX(300px); */
+    transform: translate(300px, -300px);
+  }
+}
+
+.animated-box {
+  width: 100px;
+  height: 100px;
+  background-color: #673ab7;
+  animation-name: slide;
+  animation-duration: 2s;
+  /* animation-timing-function: ease-in-out; */
+  /* animation-timing-function: ease; */ /* default, slow-fast-slow */
+  /* animation-timing-function: linear; */ /* constant speed */
+  /* animation-timing-function: ease-in; */ /* starts slow, speeds up */
+  /* animation-timing-function: ease-out; */ /* starts fast, slows down */
+  /* animation-timing-function: ease-in-out; */ /* starts and ends slow */
+  /* animation-timing-function: step-start; */ /* jumps to end immediately */
+  /* animation-timing-function: step-end; */ /* jumps to end at last moment */
+  /* animation-timing-function: steps(5); */ /* jumps in 5 equal steps */
+  animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1); /* custom curve */
+  /* animation-delay: 1s; */
+  animation-iteration-count: 0;
+  /* animation-iteration-count: 1; */
+  /* 1, 2, 3, ..., 1.5, 2.5, ... */
+}
+
+/* =====================
+       ACCESSIBLE DESIGN
+    ====================== */
+.accessible-button {
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.accessible-button:focus {
+  outline: 3px solid yellow;
+}
+
+.button {
+  padding: 10px 20px;
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.listbox {
+  border: 1px solid #aaa;
+  padding: 0;
+  list-style: none;
+  max-width: 200px;
+}
+.listbox li {
+  padding: 8px;
+}
+.live-region {
+  margin-top: 1rem;
+  border: 1px dashed #666;
+  padding: 1rem;
+}
+
+/* =====================
+       PERFORMANCE BEST PRACTICES
+       (these are more conceptual)
+    ====================== */
+/* 
+      Best practices used:
+      - CSS variables to avoid repetition
+      - Responsive units
+      - Minimized class nesting
+      - Shorthand properties
+    */

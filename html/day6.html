@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Responsive and advanced concepts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="day6Styles.css" />
+  </head>
+  <body>
+    <h1>CSS Concepts Demonstration</h1>
+
+    <section>
+      <h2>1. Positioning</h2>
+      <div class="position-box">Positioned Box</div>
+    </section>
+
+    <!-- <div class="position-box">Positioned Box 2</div> -->
+
+    <section>
+      <h2>2. Responsive Units</h2>
+      <div class="responsive-box">
+        This box uses relative units and resizes based on the viewport.
+      </div>
+      <img class="fluid-image" src="CN.png" alt="Example" />
+    </section>
+
+    <section>
+      <h2>3. Animation</h2>
+      <div class="animated-box"></div>
+    </section>
+
+    <section>
+      <h2>4. CSS Variables</h2>
+      <p style="color: var(--main-color); font-size: var(--text-size)">
+        This text uses custom CSS variables.
+      </p>
+    </section>
+
+    <section>
+      <h2>5. Accessibility</h2>
+      <button class="accessible-button" aria-label="Accessible Call to Action">
+        Click Me
+      </button>
+      <button
+        class="button"
+        aria-label="Toggle Navigation"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        ☰ Menu
+      </button>
+
+      <nav id="nav-menu" hidden>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- ✅ INPUT: aria-describedby, aria-required, aria-invalid -->
+      <div style="margin-top: 2rem">
+        <label for="email">Email Address</label>
+        <input
+          id="email"
+          type="email"
+          aria-describedby="email-desc"
+          aria-required="true"
+          aria-invalid="false"
+        />
+        <div id="email-desc">Please enter a valid email address.</div>
+      </div>
+
+      <!-- 📋 LISTBOX: aria-selected, aria-activedescendant -->
+      <div style="margin-top: 2rem">
+        <label id="food-label">Select a food:</label>
+        <ul
+          role="listbox"
+          aria-labelledby="food-label"
+          id="food-list"
+          tabindex="0"
+          aria-activedescendant="option-2"
+        >
+          <li id="option-1" role="option" aria-selected="false">Pizza</li>
+          <li id="option-2" role="option" aria-selected="true">Sushi</li>
+          <li id="option-3" role="option" aria-selected="false">Salad</li>
+        </ul>
+      </div>
+
+      <!-- 🧭 ARIA LIVE REGION -->
+      <div class="live-region" aria-live="polite" aria-atomic="true">
+        Status updates will appear here when available.
+        <!-- Options:
+      aria-live="off" | "polite" | "assertive"
+      aria-atomic="true" | "false"
+    -->
+      </div>
+
+      <!-- 🎯 HIDDEN ELEMENT FOR SCREEN READERS -->
+      <div class="sr-only" aria-hidden="false">
+        Important screen reader-only content.
+        <!-- aria-hidden="true" will hide from assistive tech -->
+      </div>
+
+      <!-- 🔄 ROLE DEMO -->
+      <div
+        role="progressbar"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="65"
+        aria-valuetext="65 percent complete"
+      >
+        Loading... 65%
+      </div>
+
+      <!-- 🎛 TOGGLE WITH aria-pressed -->
+      <button class="button" aria-pressed="false">
+        Toggle Bold
+        <!-- aria-pressed="true" | "false" | "mixed" -->
+      </button>
+    </section>
+  </body>
+</html>
