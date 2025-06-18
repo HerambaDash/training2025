@@ -52,13 +52,16 @@ colors.push("red");
 // console.log(colors.includes("red"));
 // console.log(colors.lastIndexOf("red"));
 
-for (const color of colors) {
-//   console.log(color);
+for (const color in colors) {
+  console.log(color);
 }
 
 const num = [1, 2, 3, 4, 5, 6, 1];
 
-let num2 = num.find((item) => item < 2);
+let num2 = num.find((item, index) => item < 2);
+let numx = num.find(item => {
+  return item < 2;
+})
 // console.log(num2);
 
 let num3 = num.findLast((item) => item < 2);
@@ -70,6 +73,7 @@ function double(number) {
 const numbers = [5, 2, 7, 6];
 const doubled = numbers.map(double);
 // console.log(doubled);
+const doubled2 = numbers.map((number) => number * 2);
 
 function isLong(city) {
   return city.length > 8;
@@ -79,7 +83,7 @@ const longer = cities.filter(isLong);
 // console.log(longer);
 
 const data = "Manchester,London,Liverpool,Birmingham,Leeds,Carlisle";
-const citiesFromString = data.split(",");
+const citiesFromString = data.split("@");
 // console.log(citiesFromString);
 
 const joinedCities = citiesFromString.join(" - ");
@@ -88,11 +92,21 @@ const joinedCities = citiesFromString.join(" - ");
 const numbersArray = [1, 2, 3, 4, 5];
 // console.log(Array.isArray(numbersArray));
 
-// console.log(Array.of("foo", 2, "bar", true));
+// console.log(Array.of([1,2,3]));
 
 // console.log(Array.from("foo"));
 
-// console.log(Array.from([1, 2, 3], (x) => x + x));
+// let str = "foo";
+
+// console.log(str.split(""));
+
+console.log(Array.from([1, 2, 3], (x) => x + x));
+let newArr = [1,2,3].map((x) => x + x);
+
+let dummyArr = new Array(5).fill("dummy");
+let dummyArr2 = new Array(1, 2, 3, 4, 5);
+
+let emptyObject = {};
 
 let arrOfObjects = [
   { name: "Alice", age: 30 },
@@ -100,10 +114,21 @@ let arrOfObjects = [
   { name: "Charlie", age: 35 }
 ];
 
+// for(const value of arrOfObjects) {
+//   emptyObject[value.name] = value;
+// }
+
+let arObjects = {
+  ["Alice"] : { name: "Alice", age: 30 },
+  ["Bob"] : { name: "Bob", age: 25 },
+  ["Charlie"] : { name: "Charlie", age: 35 }
+};
+
 let objOfObjects = arrOfObjects.reduce((acc, obj) => {
-  acc[obj.name] = obj;
+  // acc[obj.name] = obj;
+  acc = { ...acc, [obj.name]: obj };
   return acc;
-}, {});
+}, emptyObject);
 
 // console.log(objOfObjects);
 
@@ -125,7 +150,7 @@ let person = {
 
 //  Spread operator
 let arr1 = [1, 2, 3];
-let arr2 = [...arr1, 4, 5];
+let arr2 = [...arr1];
 // console.log(arr2);
 
 let obj1 = { a: 1, b: 2 };
@@ -138,7 +163,7 @@ function objectKeysAsParameters(key1, key2, key3) {
     console.log(`Key 3: ${key3}`);
 }
 // objectKeysAsParameters(...Object.keys(obj2));
-// objectKeysAsParameters(...Object.values(obj2));
+// objectKeysAsParameters(1,2,3,4);
 
 //  JSON notation
 let jsonString = '{"name":"John", "age":25}';
@@ -157,3 +182,7 @@ let backToJson = JSON.stringify(user); // Object to JSON string
 
 
 
+
+
+// const arr2 = [0, 1, [2, [3, [4, 5]]]];
+// Recursive function to flatten an array
