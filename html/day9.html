@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript DOM Methods Examples</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+      }
+      .box {
+        border: 1px solid gray;
+        padding: 10px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript DOM Methods Examples</h1>
+
+    <!-- Document Access Methods -->
+    <h2>1. getElementById</h2>
+    <p id="demo">Hello</p>
+
+    <h2>2. getElementsByClassName</h2>
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+
+    <h2>3. getElementsByTagName</h2>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+
+    <h2>4. querySelector & querySelectorAll</h2>
+    <p class="intro">Intro Paragraph</p>
+    <ul>
+      <li class="item">Item One</li>
+      <li class="item">Item Two</li>
+    </ul>
+
+    <!-- Content & Attribute Methods -->
+    <h2>5. innerHTML and textContent</h2>
+    <div id="info"></div>
+    <p id="message"></p>
+
+    <h2>6. setAttribute, getAttribute, removeAttribute</h2>
+    <img id="logo" width="100" />
+    <a id="link" href="https://example.com">Visit Link</a>
+    <input id="email" disabled />
+
+    <!-- Style and Class -->
+    <h2>7. style and classList</h2>
+    <div id="styleBox">Styled Box</div>
+    <div id="text">Toggle Me</div>
+    <button onclick="toggleHighlight()">Toggle Highlight</button>
+
+    <!-- DOM Tree Modification -->
+    <h2>
+      8. createElement, appendChild, insertBefore, removeChild, replaceChild
+    </h2>
+    <ul id="list">
+      <li>First Item</li>
+      <li>Second Item</li>
+    </ul>
+    <div id="wrapper"><span id="removeMe">To be removed</span></div>
+
+    <h2>List from Array</h2>
+    <ul id="itemList"></ul>
+
+    <h2>City Place Selector</h2>
+    <input
+      type="text"
+      id="cityInput"
+      placeholder="Enter city name (e.g., delhi)"
+    />
+    <button onclick="renderPlaces()">Show Places</button>
+    <div id="placesContainer"></div>
+
+    <h2>Search Places by City (Real-time)</h2>
+    <input type="text" id="citySearchInput" placeholder="Type city name..." />
+    <span id="searchStatus"></span>
+    <div id="placeRadioContainer"></div>
+
+    <!-- Event Handling -->
+    <h2>9. addEventListener and removeEventListener</h2>
+    <button id="clickMe">Click Me</button>
+
+    <!-- Form and Input -->
+    <h2>10. Form and Input Methods</h2>
+    <input id="nameInput" placeholder="Enter name" />
+    <button onclick="showName()">Show Name</button>
+
+    <form id="myForm">
+      <input placeholder="Type something..." />
+      <button type="button" onclick="resetForm()">Reset Form</button>
+    </form>
+    <script src="data.js"></script>
+    <script>
+      // 1. getElementById
+      document.getElementById("demo").textContent = "Hi there!";
+
+      // 2. getElementsByClassName
+      const boxes = document.getElementsByClassName("box");
+      boxes[0].style.color = "red";
+
+      // 3. getElementsByTagName
+      const paragraphs = document.getElementsByTagName("p");
+      paragraphs[2].style.fontWeight = "bold";
+
+      // 4. querySelector & querySelectorAll
+      document.querySelector(".intro").style.backgroundColor = "lightblue";
+      const items = document.querySelectorAll(".item");
+      items.forEach((item) => (item.style.textDecoration = "underline"));
+
+      // 5. innerHTML and textContent
+      document.getElementById("info").innerHTML = "<strong>Bold text</strong>";
+      document.getElementById("message").textContent = "Just plain text";
+
+      // 6. setAttribute, getAttribute, removeAttribute
+      document
+        .getElementById("logo")
+        .setAttribute("src", "https://via.placeholder.com/100");
+      const linkHref = document.getElementById("link").getAttribute("href");
+      console.log("Link points to:", linkHref);
+      document.getElementById("email").removeAttribute("disabled");
+
+      // 7. style and classList
+      document.getElementById("styleBox").style.border = "2px solid black";
+      function toggleHighlight() {
+        document.getElementById("text").classList.toggle("highlight");
+      }
+
+      // 8. createElement, appendChild, insertBefore, removeChild, replaceChild
+      const newLi = document.createElement("li");
+      newLi.textContent = "Appended Item";
+      document.getElementById("list").appendChild(newLi);
+
+      const insertLi = document.createElement("li");
+      insertLi.textContent = "Inserted Item";
+      const referenceNode = document.querySelector("#list li");
+      console.log(referenceNode); // Log the reference node
+      document.getElementById("list").insertBefore(insertLi, referenceNode);
+
+      const positionedLi = document.createElement("li");
+      positionedLi.textContent = "Inserted at position 2";
+      const position = 3;
+      // const referenceNodeViaQuerySelectorAll = document.querySelectorAll("#list li")[2];
+      const referenceNode2 = document.getElementById("list").children[position];
+      document.getElementById("list").insertBefore(positionedLi, referenceNode);
+
+      const removeEl = document.getElementById("removeMe");
+      removeEl.parentNode.removeChild(removeEl);
+
+      const newSpan = document.createElement("span");
+      newSpan.textContent = "I'm new!";
+      const wrapper = document.getElementById("wrapper");
+      wrapper.appendChild(newSpan); // appending again to demonstrate replaceChild
+      // wrapper.replaceChild(newSpan, removeEl); // Already removed
+
+      const ul = document.getElementById("itemList");
+      itemList.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        ul.appendChild(li);
+      });
+
+      function renderPlaces() {
+        const cityName = document
+          .getElementById("cityInput")
+          .value.trim()
+          .toLowerCase();
+        const container = document.getElementById("placesContainer");
+        container.innerHTML = ""; // Clear previous content
+
+        if (cities.hasOwnProperty(cityName)) {
+          const places = cities[cityName];
+          for (const place in places) {
+            const id = `${cityName}-${place.replace(/\s/g, "-")}`;
+
+            const label = document.createElement("label");
+            label.setAttribute("for", id);
+            label.textContent = `${place} (Pincode: ${places[place]})`;
+
+            const radio = document.createElement("input");
+            radio.type = "radio";
+            radio.name = "place";
+            radio.value = place;
+            radio.id = id;
+
+            container.appendChild(radio);
+            container.appendChild(label);
+            container.appendChild(document.createElement("br"));
+          }
+        } else {
+          container.textContent =
+            "City not found. Please try: delhi, mumbai, chennai, kolkata, bangalore";
+        }
+      }
+
+      // 9. addEventListener and removeEventListener
+      function sayHi() {
+        alert("Button clicked!");
+      }
+      const btn = document.getElementById("clickMe");
+      btn.addEventListener("click", sayHi);
+      setTimeout(() => {
+        btn.removeEventListener("click", sayHi);
+      }, 5000); // remove event after 5s
+
+      // Elements
+      const citySearchInput = document.getElementById("citySearchInput");
+      const searchStatus = document.getElementById("searchStatus");
+      const placeRadioContainer = document.getElementById(
+        "placeRadioContainer"
+      );
+
+      citySearchInput.addEventListener("input", () => {
+        searchStatus.textContent = "Searching...";
+        placeRadioContainer.innerHTML = "";
+
+        const cityKey = citySearchInput.value.trim().toLowerCase();
+
+        if (cityKey === "") {
+          searchStatus.textContent = "";
+          return;
+        }
+
+        if (cities.hasOwnProperty(cityKey)) {
+          searchStatus.textContent = "City found ✔️";
+          showPlacesAsRadios(cityKey);
+        } else {
+          searchStatus.textContent = "City not found ❌";
+        }
+      });
+
+      function showPlacesAsRadios(cityKey) {
+        placeRadioContainer.innerHTML = "";
+
+        const placesObj = cities[cityKey];
+        for (const place in placesObj) {
+          const radioId = `${cityKey}-${place.replace(/\s+/g, "-")}`;
+
+          const radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = "selectedPlace";
+          radio.id = radioId;
+          radio.value = place;
+
+          const label = document.createElement("label");
+          label.htmlFor = radioId;
+          label.textContent = `${place} (Pincode: ${placesObj[place]})`;
+
+          placeRadioContainer.appendChild(radio);
+          placeRadioContainer.appendChild(label);
+          placeRadioContainer.appendChild(document.createElement("br"));
+        }
+      }
+
+      // 10. Form and Input
+      function showName() {
+        const name = document.getElementById("nameInput").value;
+        alert("Name: " + name);
+      }
+
+      function resetForm() {
+        document.getElementById("myForm").reset();
+      }
+    </script>
+  </body>
+</html>
